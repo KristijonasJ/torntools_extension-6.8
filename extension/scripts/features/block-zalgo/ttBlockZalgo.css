@@ -1,0 +1,3 @@
+.no-zalgo [class*="_chat-active_"] [class*="_message_"] {
+	overflow: hidden;
+}

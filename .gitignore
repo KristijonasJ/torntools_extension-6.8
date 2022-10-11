@@ -1,0 +1,8 @@
+# IDE Settings
+.idea
+
+# VS Code settings
+.vscode
+
+extension/scripts/jshint.json
+extension/scripts/eslint.json

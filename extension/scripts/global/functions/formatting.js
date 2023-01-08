@@ -59,16 +59,21 @@ function textToTime(time, options = {}) {
 	} else {
 		let group;
 		// noinspection JSUnusedAssignment
-		if ((group = time.match(/(\d+) ?d/i))) {
+		
+		if (time.match(/(\d+) ?d/i)) {
+			group = time.match(/(\d+) ?d/i);
 			millis += parseInt(group[1]) * TO_MILLIS.DAYS;
 		}
-		if ((group = time.match(/(\d+) ?h/i))) {
+		if (time.match(/(\d+) ?h/i)) {
+			group = time.match(/(\d+) ?h/i);
 			millis += parseInt(group[1]) * TO_MILLIS.HOURS;
 		}
-		if ((group = time.match(/(\d+) ?min/i))) {
+		if (time.match(/(\d+) ?min/i)) {
+			group = time.match(/(\d+) ?min/i));
 			millis += parseInt(group[1]) * TO_MILLIS.MINUTES;
 		}
-		if ((group = time.match(/(\d+) ?s/i))) {
+		if (time.match(/(\d+) ?s/i)) {
+			group = time.match(/(\d+) ?s/i));
 			millis += parseInt(group[1]) * TO_MILLIS.SECONDS;
 		}
 	}

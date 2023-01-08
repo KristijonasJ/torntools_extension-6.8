@@ -54,7 +54,7 @@
 					src: chrome.runtime.getURL("pages/settings/settings.html"),
 				},
 			});
-			if (!addedMessageListener) {
+			if (!addedMessageListener && window.origin.includes("pages/settings/settings.html?page=preferences")) {
 				window.addEventListener("message", messageListener);
 				addedMessageListener = true;
 			}
@@ -104,7 +104,7 @@
 								events: {
 									click: () => {
 										document.getElementById("saveSettingsBar").classList.add("tt-hidden");
-										document.getElementById("tt-settings-iframe").contentWindow.postMessage({ torntools: 1, revert: 1 }, "*");
+										document.getElementById("tt-settings-iframe").contentWindow.postMessage({ torntools: 1, revert: 1 });
 									},
 								},
 							}),
@@ -115,7 +115,8 @@
 								events: {
 									click: () => {
 										document.getElementById("saveSettingsBar").classList.add("tt-hidden");
-										document.getElementById("tt-settings-iframe").contentWindow.postMessage({ torntools: 1, save: 1 }, "*");
+										document.getElementById("tt-settings-iframe").contentWindow.postMessage({ torntools: 1, save: 1 });
+										
 									},
 								},
 							}),
